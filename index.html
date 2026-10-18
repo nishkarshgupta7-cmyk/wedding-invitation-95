@@ -1,0 +1,867 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2064%2064'%3E%3Crect%20width%3D'64'%20height%3D'64'%20rx%3D'14'%20fill%3D'%233d0610'%2F%3E%3Ctext%20x%3D'32'%20y%3D'47'%20font-size%3D'40'%20text-anchor%3D'middle'%20fill%3D'%23d4af37'%20font-family%3D'serif'%3E%E0%A5%90%3C%2Ftext%3E%3C%2Fsvg%3E">
+<title>Nishkarsh &amp; Bhanvi Wedding</title>
+<meta name="description" content="Wedding invitation for Nishkarsh and Bhanvi, 24 to 26 November 2026, Jaipur.">
+<meta name="theme-color" content="#1a0206">
+<meta property="og:title" content="Nishkarsh &amp; Bhanvi Wedding">
+<meta property="og:description" content="You are invited to the wedding celebrations in Jaipur, 24 to 26 November 2026.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Great+Vibes&family=Noto+Serif+Devanagari:wght@400;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap">
+<style>
+/* Royal invitation: a gated entrance (two doors and a seal) opens onto one centred column of arched cards on velvet maroon. */
+:root {
+  color-scheme: dark;
+  --ink: #1a0206;
+  --velvet: #3d0610;
+  --crimson: #5c0918;
+  --ruby: #8a0f26;
+  --gold: #d4af37;
+  --gold-soft: rgba(212, 175, 55, 0.35);
+  --cream: #fdf5e6;
+  --text: #e6dcd2;
+  --dim: #b8a89e;
+  --foil: linear-gradient(135deg, #bf953f 0%, #fcf6ba 28%, #b38728 52%, #fbf5b7 76%, #aa771c 100%);
+  --f-script: "Great Vibes", "Snell Roundhand", "Apple Chancery", cursive;
+  --f-display: "Cinzel Decorative", "Cinzel", Georgia, "Times New Roman", serif;
+  --f-body: "Playfair Display", Georgia, "Times New Roman", serif;
+  --f-deva: "Noto Serif Devanagari", "Noto Sans Devanagari", "Kohinoor Devanagari", "Mangal", serif;
+  --f-ui: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { background: var(--ink); scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+html.locked { overflow: hidden; }
+body {
+  margin: 0;
+  background: var(--ink);
+  color: var(--text);
+  font-family: var(--f-body);
+  font-size: 1rem;
+  line-height: 1.6;
+  overscroll-behavior-y: none;
+  -webkit-font-smoothing: antialiased;
+}
+[hidden] { display: none !important; }
+h1, h2, h3, p, ul, blockquote, figure { margin: 0; }
+ul { padding: 0; list-style: none; }
+a { color: inherit; }
+svg { display: block; }
+:focus-visible { outline: 2px solid var(--cream); outline-offset: 3px; }
+.sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+.defs { position: absolute; width: 0; height: 0; overflow: hidden; }
+
+/* Side gutter, set once per full-width band */
+.wrap {
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+.container { width: 100%; max-width: 56rem; margin-inline: auto; }
+
+/* Gold foil text. The shadow is a filter on the box: a text-shadow would paint over the clipped gradient and turn it muddy. */
+.foil {
+  background: var(--foil);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.ico { width: 1.25em; height: 1.25em; flex: none; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.ico-foil { stroke: url(#foil24); }
+
+/* ---------- Entrance ---------- */
+.entrance { display: none; }
+.js .entrance {
+  --cx: calc(1.4rem + env(safe-area-inset-left, 0px));
+  --cy: calc(1.4rem + env(safe-area-inset-top, 0px));
+  --cr: calc(1.4rem + env(safe-area-inset-right, 0px));
+  --cb: calc(1.4rem + env(safe-area-inset-bottom, 0px));
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  perspective: 1800px;
+  background: #050102;
+  touch-action: none;
+  transition: opacity 0.4s ease;
+}
+.entrance.opened { background: transparent; pointer-events: none; }
+.door {
+  position: relative;
+  flex: 1 1 50%;
+  background:
+    radial-gradient(rgba(212, 175, 55, 0.07) 1px, transparent 1.5px) 0 0 / 20px 20px,
+    linear-gradient(135deg, #4a0404, #1a0002);
+  transition: transform 0.8s cubic-bezier(0.65, 0, 0.25, 1);
+  will-change: transform;
+}
+.door::before {
+  content: "";
+  position: absolute;
+  inset: 3% 4%;
+  border: 2px solid rgba(212, 175, 55, 0.6);
+  border-radius: 4px;
+  box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.6);
+  pointer-events: none;
+}
+.door::after {
+  content: "";
+  position: absolute;
+  inset: 4.5% 6.5%;
+  border: 1px dashed rgba(212, 175, 55, 0.4);
+  pointer-events: none;
+}
+.door-l { transform-origin: left center; border-right: 2px solid rgba(212, 175, 55, 0.8); box-shadow: 10px 0 30px rgba(0, 0, 0, 0.8); }
+.door-r { transform-origin: right center; border-left: 2px solid rgba(212, 175, 55, 0.8); }
+.entrance.opened .door-l { transform: rotateY(-100deg); }
+.entrance.opened .door-r { transform: rotateY(100deg); }
+
+.corner { position: absolute; z-index: 1; width: 6rem; height: 6rem; pointer-events: none; }
+.corner.tl { top: var(--cy); left: var(--cx); }
+.corner.bl { bottom: var(--cb); left: var(--cx); transform: scaleY(-1); }
+.corner.tr { top: var(--cy); right: var(--cr); transform: scaleX(-1); }
+.corner.br { bottom: var(--cb); right: var(--cr); transform: scale(-1, -1); }
+
+.seal {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  translate: -50% -50%;
+  z-index: 5;
+  display: grid;
+  place-items: center;
+  width: 10rem;
+  height: 10rem;
+  padding: 0;
+  border: 2px solid var(--gold);
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--velvet), var(--ink));
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.9), 0 0 0 4px rgba(212, 175, 55, 0.2), inset 0 0 20px rgba(212, 175, 55, 0.3);
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+  transition: scale 0.35s ease, opacity 0.35s ease, filter 0.35s ease;
+}
+.seal::after {
+  content: "";
+  position: absolute;
+  inset: -4px;
+  border: 1.5px solid var(--gold);
+  border-radius: 50%;
+  opacity: 0;
+  animation: ring 2.6s ease-out infinite;
+  pointer-events: none;
+}
+@media (hover: hover) { .seal:hover { scale: 1.05; } }
+.entrance.opened .seal { opacity: 0; scale: 1.5; filter: blur(8px); }
+.seal-ring { position: absolute; inset: 0.55rem; width: calc(100% - 1.1rem); height: calc(100% - 1.1rem); }
+.seal-om { font-family: var(--f-deva); font-size: 4rem; font-weight: 600; line-height: 1.3; padding: 0 0.1em; filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.45)); }
+.seal-tap {
+  position: absolute;
+  top: calc(100% + 1.4rem);
+  left: 50%;
+  translate: -50% 0;
+  width: max-content;
+  font-family: var(--f-display);
+  font-size: 0.8rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--cream);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+  animation: pulse 1.8s ease-in-out infinite;
+}
+@keyframes ring { 0% { transform: scale(1); opacity: 0.7; } 100% { transform: scale(1.55); opacity: 0; } }
+@keyframes pulse { 0%, 100% { opacity: 0.6; } 50% { opacity: 1; } }
+@keyframes bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(6px); } }
+
+/* ---------- Page ---------- */
+main { position: relative; isolation: isolate; overflow-x: clip; }
+main:focus { outline: none; }
+.backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(rgba(212, 175, 55, 0.05) 1px, transparent 1.5px) 0 0 / 22px 22px,
+    radial-gradient(60rem 38rem at 12% 8%, rgba(212, 175, 55, 0.11), transparent 62%),
+    radial-gradient(52rem 36rem at 95% 42%, rgba(138, 15, 38, 0.38), transparent 62%),
+    radial-gradient(46rem 30rem at 18% 92%, rgba(212, 175, 55, 0.08), transparent 62%),
+    linear-gradient(180deg, var(--velvet), var(--ink) 70%);
+}
+#fx { position: fixed; inset: 0; z-index: 3; width: 100%; height: 100%; pointer-events: none; }
+.page { position: relative; z-index: 1; }
+
+/* Scroll reveal: elements rest visible and settle into place. */
+.reveal { transition: opacity 0.9s ease, transform 0.9s ease; transition-delay: var(--d, 0ms); }
+.js .reveal:not(.in) { opacity: 0.35; transform: translateY(24px); }
+
+/* ---------- Hero ---------- */
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.75rem;
+  padding-block: clamp(3.5rem, 9vw, 6rem) 4.5rem;
+  text-align: center;
+}
+.hero-top { display: flex; flex-direction: column; align-items: center; gap: 0.9rem; }
+.om-mark { font-family: var(--f-deva); font-size: 4.5rem; font-weight: 600; line-height: 1.3; padding: 0 0.1em; filter: drop-shadow(0 0 14px rgba(212, 175, 55, 0.55)); }
+.shri { font-family: var(--f-deva); font-size: clamp(1.3rem, 5vw, 1.7rem); font-weight: 700; color: var(--cream); }
+.shloka { max-width: 28rem; font-family: var(--f-deva); font-size: clamp(1rem, 3.6vw, 1.1rem); line-height: 1.95; color: var(--text); }
+.elder { margin-top: 0.6rem; display: grid; gap: 0.5rem; justify-items: center; }
+.elder-name { font-family: var(--f-display); font-size: clamp(0.8rem, 3vw, 0.95rem); letter-spacing: 0.12em; text-transform: uppercase; color: var(--cream); text-wrap: balance; }
+.elder-line { max-width: 30rem; font-size: 0.98rem; color: var(--text); text-wrap: balance; }
+
+.names { display: flex; flex-direction: column; align-items: center; gap: 0.3rem; font-weight: 400; }
+.name { display: block; font-family: var(--f-script); font-size: clamp(3.75rem, 17vw, 9rem); line-height: 1.1; padding: 0.06em 0.14em 0.16em; filter: drop-shadow(0 2px 10px rgba(0, 0, 0, 0.75)); }
+.parents { display: block; max-width: 24rem; font-family: var(--f-display); font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); text-wrap: balance; }
+.with { display: flex; align-items: center; justify-content: center; gap: 1.1rem; margin-block: 1.1rem; font-family: var(--f-display); font-size: clamp(1.2rem, 5vw, 1.9rem); color: var(--cream); }
+.with .rule { display: block; width: clamp(2.5rem, 12vw, 5rem); height: 1px; background: linear-gradient(90deg, transparent, var(--gold)); }
+.with .rule:last-child { background: linear-gradient(270deg, transparent, var(--gold)); }
+.with .ico { width: 0.8rem; height: 0.8rem; fill: var(--ruby); stroke: #c43a55; stroke-width: 1.2; filter: drop-shadow(0 0 5px rgba(220, 20, 60, 0.5)); }
+
+.hero-date { display: grid; gap: 1rem; justify-items: center; }
+.tagline { font-style: italic; font-size: clamp(1.15rem, 4.5vw, 1.6rem); color: var(--text); text-wrap: balance; }
+.date {
+  padding: 1rem 1.75rem;
+  border: 1px solid var(--gold-soft);
+  border-radius: 0.5rem;
+  background: rgba(26, 2, 6, 0.65);
+  box-shadow: 0 0 30px rgba(212, 175, 55, 0.18);
+  font-family: var(--f-display);
+  font-size: clamp(1.05rem, 4.6vw, 1.9rem);
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: var(--cream);
+  text-wrap: balance;
+}
+
+.countdown { display: grid; gap: 0.8rem; justify-items: center; width: 100%; max-width: 26rem; }
+.cd-cap { font-family: var(--f-display); font-size: 0.78rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); }
+.cd-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0.6rem; width: 100%; }
+.cd-cell { display: grid; gap: 0.1rem; padding: 0.75rem 0.25rem; border: 1px solid var(--gold-soft); border-radius: 0.5rem; background: rgba(26, 2, 6, 0.6); }
+.cd-cell b { font-family: var(--f-display); font-size: clamp(1.4rem, 6vw, 2.1rem); font-weight: 700; line-height: 1.2; color: var(--cream); font-variant-numeric: tabular-nums; }
+.cd-cell span { font-family: var(--f-ui); font-size: 0.66rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--dim); }
+.cd-done { font-family: var(--f-script); font-size: 2.4rem; color: var(--cream); }
+
+.cue { display: grid; place-items: center; width: 3rem; height: 3rem; border: 1px solid var(--gold-soft); border-radius: 50%; animation: bob 2.2s ease-in-out infinite; }
+.cue .ico { width: 1.6rem; height: 1.6rem; stroke-width: 1.8; }
+
+/* ---------- Music button ---------- */
+.music {
+  position: fixed;
+  right: calc(1rem + env(safe-area-inset-right, 0px));
+  bottom: calc(1rem + env(safe-area-inset-bottom, 0px));
+  z-index: 20;
+  display: grid;
+  place-items: center;
+  width: 3rem;
+  height: 3rem;
+  padding: 0;
+  border: 1.5px solid var(--gold);
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--velvet), var(--ink));
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.7), inset 0 0 12px rgba(212, 175, 55, 0.25);
+  color: var(--cream);
+  cursor: pointer;
+  transition: scale 0.2s ease;
+}
+.music .ico { width: 1.4rem; height: 1.4rem; stroke-width: 1.7; transition: opacity 0.2s ease; }
+.music::before { content: ""; position: absolute; inset: -3px; border: 1.5px solid var(--gold); border-radius: 50%; opacity: 0; animation: ring 2.8s ease-out infinite; pointer-events: none; }
+.music.off::before { animation: none; }
+.music.off .ico { opacity: 0.55; }
+.music.off::after { content: ""; position: absolute; width: 1.9rem; height: 2px; border-radius: 1px; background: var(--gold); rotate: -45deg; box-shadow: 0 0 0 1.5px var(--ink); pointer-events: none; }
+@media (hover: hover) { .music:hover { scale: 1.07; } }
+
+/* ---------- Section headings ---------- */
+.section-title { text-align: center; font-family: var(--f-script); font-size: clamp(3rem, 11vw, 4.75rem); font-weight: 400; line-height: 1.2; padding: 0.08em 0.12em 0.16em; filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.7)); text-wrap: balance; }
+.orn { display: flex; align-items: center; justify-content: center; gap: 1rem; margin-top: 0.75rem; }
+.orn i { display: block; width: clamp(3rem, 16vw, 8rem); height: 1px; background: linear-gradient(90deg, transparent, var(--gold)); }
+.orn i:last-child { background: linear-gradient(270deg, transparent, var(--gold)); }
+.orn .ico { width: 1.5rem; height: 1.5rem; color: var(--gold); }
+
+/* ---------- Event cards ---------- */
+.events { padding-block: 3rem 4rem; }
+.cards { display: grid; gap: 6.25rem; margin-top: 5.5rem; }
+.card {
+  position: relative;
+  padding: 5.25rem clamp(2rem, 6vw, 3rem) 2.75rem;
+  border: 2px solid var(--gold);
+  border-bottom-width: 6px;
+  border-radius: 180px 180px 16px 16px;
+  background: linear-gradient(135deg, rgba(61, 6, 16, 0.96), rgba(26, 2, 6, 0.98));
+  box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 1), inset 0 0 60px rgba(212, 175, 55, 0.1);
+  text-align: center;
+}
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 22px;
+  border: 1px dashed rgba(252, 246, 186, 0.55);
+  border-radius: 158px 158px 8px 8px;
+  pointer-events: none;
+}
+.badge {
+  position: absolute;
+  top: -2.9rem;
+  left: 50%;
+  translate: -50% 0;
+  display: grid;
+  place-items: center;
+  width: 5.8rem;
+  height: 5.8rem;
+  border: 2px solid var(--gold);
+  border-radius: 50%;
+  background: var(--ink);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.8);
+}
+.badge .ico { width: 2.8rem; height: 2.8rem; stroke-width: 1.4; }
+.badge .om-glyph { font-family: var(--f-deva); font-size: 2.7rem; font-weight: 700; line-height: 1.3; }
+.blessing { margin-bottom: 0.9rem; font-family: var(--f-deva); font-size: clamp(0.95rem, 3.4vw, 1.1rem); line-height: 1.9; color: rgba(253, 245, 230, 0.85); }
+.card-title { font-family: var(--f-script); font-size: clamp(2.6rem, 10vw, 3.75rem); font-weight: 400; line-height: 1.2; color: var(--cream); text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6); text-wrap: balance; }
+.card-date { margin-top: 0.4rem; font-family: var(--f-display); font-size: clamp(0.85rem, 3.2vw, 1.1rem); font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold); text-wrap: balance; }
+.schedule { display: grid; gap: 1.1rem 3rem; max-width: 34rem; margin: 2rem auto 0; font-size: clamp(1.05rem, 4vw, 1.25rem); color: var(--text); text-align: left; }
+.schedule li { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; padding-bottom: 0.7rem; border-bottom: 1px solid var(--gold-soft); }
+.schedule li > span:first-child { min-width: 0; }
+.schedule .t { font-weight: 700; color: var(--cream); white-space: nowrap; font-variant-numeric: tabular-nums; }
+@media (min-width: 48rem) { .schedule.two { grid-template-columns: 1fr 1fr; max-width: 44rem; } }
+.bigtime { margin-top: 1.5rem; font-size: 2rem; font-weight: 700; color: var(--cream); font-variant-numeric: tabular-nums; }
+.intro { margin-top: 1.75rem; font-style: italic; color: var(--dim); }
+
+.venue { display: inline-grid; justify-items: center; gap: 0.35rem; max-width: 100%; margin-top: 2rem; padding: 1.1rem 1.75rem; border: 1px solid var(--gold-soft); border-radius: 0.5rem; background: rgba(0, 0, 0, 0.45); box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.5); }
+.venue.feature { border-color: var(--gold); background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(61, 6, 16, 0.85)); }
+.venue-label { font-family: var(--f-display); font-size: 0.78rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); }
+.venue-name { font-size: 1.2rem; letter-spacing: 0.03em; color: #f3ece6; text-wrap: balance; }
+.venue.feature .venue-name { font-family: var(--f-display); font-size: clamp(1.1rem, 4.4vw, 1.5rem); font-weight: 700; color: var(--cream); }
+.venue-addr { max-width: 22rem; font-family: var(--f-ui); font-size: 0.9rem; line-height: 1.5; color: var(--dim); }
+.actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.75rem; margin-top: 1.4rem; }
+.note { max-width: 28rem; margin: 2rem auto 0; padding-top: 1.5rem; border-top: 1px solid var(--gold-soft); font-family: var(--f-display); font-size: 0.82rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--cream); text-wrap: balance; }
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  flex: 1 1 11rem;
+  max-width: 16rem;
+  min-height: 2.75rem;
+  padding: 0.65rem 1.25rem;
+  border: 1px solid var(--gold);
+  border-radius: 0.4rem;
+  font-family: var(--f-display);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  cursor: pointer;
+  transition: filter 0.2s ease;
+}
+.btn .ico { width: 1.1rem; height: 1.1rem; stroke-width: 1.8; }
+.btn-gold { background: var(--foil); color: var(--ink); box-shadow: 0 0 20px rgba(212, 175, 55, 0.3); }
+.btn-line { background: rgba(0, 0, 0, 0.25); color: var(--cream); }
+.btn:hover { filter: brightness(1.12); }
+
+/* ---------- Families ---------- */
+.families { padding-block: 2rem 3rem; text-align: center; }
+.manuhar { margin-bottom: 4rem; }
+.deva-title { margin-bottom: 1.5rem; font-family: var(--f-deva); font-size: clamp(2rem, 8vw, 2.6rem); font-weight: 700; color: var(--cream); text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6); }
+.quote { display: inline-block; max-width: 100%; padding: 1.5rem clamp(1.25rem, 5vw, 2.25rem); border-block: 2px solid var(--gold-soft); border-radius: 0.75rem; background: rgba(26, 2, 6, 0.55); }
+.quote p { max-width: 32rem; font-style: italic; font-size: clamp(1.15rem, 4.4vw, 1.5rem); line-height: 1.7; color: var(--cream); text-wrap: balance; }
+.quote footer { margin-top: 1.1rem; font-family: var(--f-display); font-size: 1.05rem; font-weight: 700; letter-spacing: 0.14em; color: var(--gold); }
+.panels { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr)); gap: 2rem; }
+.panel { display: grid; align-content: start; justify-items: center; gap: 0.5rem; min-width: 0; padding: 2rem 1.5rem; border: 1px solid var(--gold-soft); border-radius: 0.75rem; background: rgba(12, 1, 4, 0.78); box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.8); }
+.panel h3 { margin: 1.4rem 0 0.7rem; padding-bottom: 0.7rem; border-bottom: 1px solid var(--gold-soft); font-family: var(--f-display); font-size: 1.1rem; font-weight: 400; letter-spacing: 0.14em; color: var(--cream); text-wrap: balance; }
+.panel h3:first-child { margin-top: 0; }
+.panel p { font-size: 1.1rem; color: var(--text); text-wrap: balance; }
+.panel .sub { margin-top: 0.4rem; font-family: var(--f-ui); font-size: 0.95rem; color: var(--dim); }
+.tel { color: var(--cream); text-decoration: underline; text-decoration-color: var(--gold-soft); text-underline-offset: 0.22em; }
+.panel .actions { margin-top: 1rem; }
+
+.footer { padding-block: 2rem 5rem; text-align: center; }
+.footer .ico { width: 2rem; height: 2rem; margin: 0 auto 1.25rem; fill: rgba(212, 175, 55, 0.4); stroke: none; }
+.footer p { font-family: var(--f-script); font-size: clamp(2.6rem, 10vw, 3.75rem); line-height: 1.3; color: var(--cream); text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6); }
+.nojs { padding: 2rem 0; text-align: center; color: var(--dim); }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition-duration: 0.01ms !important; transition-delay: 0ms !important; }
+  .js .reveal:not(.in) { opacity: 1; transform: none; }
+  .entrance.opened .door { transform: none; }
+  .entrance.opened { opacity: 0; }
+}
+</style>
+</head>
+<body>
+<script>document.documentElement.classList.add('js', 'locked');</script>
+
+<svg class="defs" width="0" height="0" aria-hidden="true" focusable="false">
+  <defs>
+    <linearGradient id="foil24" gradientUnits="userSpaceOnUse" x1="2" y1="2" x2="22" y2="22">
+      <stop offset="0" stop-color="#bf953f"/><stop offset=".28" stop-color="#fcf6ba"/><stop offset=".52" stop-color="#b38728"/><stop offset=".76" stop-color="#fbf5b7"/><stop offset="1" stop-color="#aa771c"/>
+    </linearGradient>
+    <linearGradient id="foil100" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="100" y2="100">
+      <stop offset="0" stop-color="#bf953f"/><stop offset=".28" stop-color="#fcf6ba"/><stop offset=".52" stop-color="#b38728"/><stop offset=".76" stop-color="#fbf5b7"/><stop offset="1" stop-color="#aa771c"/>
+    </linearGradient>
+  </defs>
+  <symbol id="corner" viewBox="0 0 100 100">
+    <path d="M0 0v40c22.1 0 40-17.9 40-40H0z" fill="url(#foil100)" opacity=".8"/>
+    <path d="M10 10v20c11 0 20-9 20-20H10z" fill="url(#foil100)"/>
+    <path d="M0 50c27.6 0 50-22.4 50-50" fill="none" stroke="url(#foil100)" stroke-width="2"/>
+  </symbol>
+  <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.6M12 18.9v2.6M2.5 12h2.6M18.9 12h2.6M5.3 5.3l1.9 1.9M16.8 16.8l1.9 1.9M5.3 18.7l1.9-1.9M16.8 7.2l1.9-1.9"/></symbol>
+  <symbol id="i-flame" viewBox="0 0 24 24"><path d="M12 2.6c.7 3 4.7 4.9 4.7 9.3a4.7 4.7 0 0 1-9.4 0c0-1.8.8-3.1 1.9-4.2.3 1.3 1 2 1.9 2.3-.4-2.7-.3-5.4.9-7.4z"/><path d="M5 20.6h14M7.4 18h9.2"/></symbol>
+  <symbol id="i-dhol" viewBox="0 0 24 24"><ellipse cx="5" cy="12" rx="1.7" ry="4.6"/><ellipse cx="19" cy="12" rx="1.7" ry="4.6"/><path d="M5 7.4h14M5 16.6h14M6.8 7.5l2.6 9 2.6-9 2.6 9 2.6-9"/><path d="M9 3.2l4.2 2.6M16 3l-3.2 2.8"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21.5s6.8-5.9 6.8-11.7a6.8 6.8 0 1 0-13.6 0C5.2 15.6 12 21.5 12 21.5z"/><circle cx="12" cy="9.8" r="2.4"/></symbol>
+  <symbol id="i-cal" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15.5" rx="2"/><path d="M3.5 10h17M8 3v4M16 3v4"/></symbol>
+  <symbol id="i-chev" viewBox="0 0 24 24"><path d="M6 9.5l6 6 6-6"/></symbol>
+  <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 21l-1.4-1.3C5.4 15.1 2.5 12.4 2.5 9A4.9 4.9 0 0 1 7.4 4.1c1.7 0 3.4.8 4.6 2.1 1.2-1.3 2.9-2.1 4.6-2.1A4.9 4.9 0 0 1 21.5 9c0 3.4-2.9 6.1-8.1 10.7z"/></symbol>
+  <symbol id="i-diamond" viewBox="0 0 24 24"><path d="M12 3l5 9-5 9-5-9z"/><circle cx="12" cy="12" r="1.2"/></symbol>
+  <symbol id="i-note" viewBox="0 0 24 24"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></symbol>
+</svg>
+
+<div class="entrance" id="entrance">
+  <div class="door door-l">
+    <svg class="corner tl" viewBox="0 0 100 100" aria-hidden="true"><use href="#corner"/></svg>
+    <svg class="corner bl" viewBox="0 0 100 100" aria-hidden="true"><use href="#corner"/></svg>
+  </div>
+  <div class="door door-r">
+    <svg class="corner tr" viewBox="0 0 100 100" aria-hidden="true"><use href="#corner"/></svg>
+    <svg class="corner br" viewBox="0 0 100 100" aria-hidden="true"><use href="#corner"/></svg>
+  </div>
+  <button class="seal" id="seal" type="button" aria-label="Open the invitation">
+    <svg class="seal-ring" viewBox="0 0 100 100" aria-hidden="true">
+      <circle cx="50" cy="50" r="48" fill="none" stroke="url(#foil100)" stroke-width="1.4" stroke-dasharray="4 2.2"/>
+      <circle cx="50" cy="50" r="43.5" fill="none" stroke="url(#foil100)" stroke-width="1"/>
+    </svg>
+    <span class="seal-om foil" lang="sa" aria-hidden="true">ॐ</span>
+    <span class="seal-tap" aria-hidden="true">Tap to enter</span>
+  </button>
+</div>
+
+<main id="main" tabindex="-1">
+  <div class="backdrop" aria-hidden="true"></div>
+  <canvas id="fx" aria-hidden="true"></canvas>
+
+  <audio id="bgm" loop preload="auto"></audio>
+  <button class="music" id="music" type="button" hidden aria-label="Pause music" title="Pause music">
+    <svg class="ico ico-foil" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-note"/></svg>
+  </button>
+
+  <div class="page">
+    <header class="hero wrap">
+      <div class="hero-top reveal">
+        <p class="om-mark foil" lang="sa" aria-hidden="true">ॐ</p>
+        <p class="shri" lang="hi">॥ श्री गणेशाय नमः ॥</p>
+        <p class="shloka" lang="sa">वक्रतुण्ड महाकाय सूर्यकोटि समप्रभः ।<br>निर्विघ्नं कुरु मे देव सर्वकार्येषु सर्वदा ॥</p>
+        <div class="elder">
+          <p class="elder-name">Smt. Gomti Devi W/O Late Sh. Munshi Lal Gupta</p>
+          <p class="elder-line">Feeling extreme pleasure to announce our grandson’s wedding &amp; requesting your presence to grace this auspicious occasion</p>
+        </div>
+      </div>
+
+      <h1 class="names reveal" style="--d:150ms">
+        <span class="name foil">Nishkarsh</span>
+        <span class="parents">S/O. Mrs. Anita &amp; Mr. Mukesh Kumar Gupta</span>
+        <span class="with">
+          <span class="rule" aria-hidden="true"></span>
+          <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-heart"/></svg>
+          <span>WITH</span>
+          <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-heart"/></svg>
+          <span class="rule" aria-hidden="true"></span>
+        </span>
+        <span class="name foil">Bhanvi</span>
+        <span class="parents">D/O. Mrs. Beena &amp; Mr. Pramod Gupta</span>
+      </h1>
+
+      <div class="hero-date reveal" style="--d:250ms">
+        <p class="tagline">To Love, Laughter &amp; Happily Ever After</p>
+        <p class="date">Wednesday, 25th Nov 2026</p>
+      </div>
+
+      <div class="countdown reveal" id="countdown" role="timer" aria-label="Time left until the wedding ceremony" style="--d:300ms">
+        <p class="cd-cap">Until the wedding ceremony</p>
+        <div class="cd-grid" id="cd-grid">
+          <div class="cd-cell"><b id="cd-d">--</b><span>Days</span></div>
+          <div class="cd-cell"><b id="cd-h">--</b><span>Hours</span></div>
+          <div class="cd-cell"><b id="cd-m">--</b><span>Minutes</span></div>
+          <div class="cd-cell"><b id="cd-s">--</b><span>Seconds</span></div>
+        </div>
+      </div>
+
+      <a class="cue" id="cue" href="#events" aria-label="Scroll to the ceremonies">
+        <svg class="ico ico-foil" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-chev"/></svg>
+      </a>
+    </header>
+
+    <section class="events wrap" id="events" aria-labelledby="events-title">
+      <div class="container">
+        <div class="reveal">
+          <h2 class="section-title foil" id="events-title">Wedding Ceremonies</h2>
+          <div class="orn" aria-hidden="true"><i></i><svg class="ico" viewBox="0 0 24 24"><use href="#i-diamond"/></svg><i></i></div>
+        </div>
+        <div class="cards" id="cards">
+          <noscript><p class="nojs">Please turn on JavaScript to see the ceremony schedule.</p></noscript>
+        </div>
+      </div>
+    </section>
+
+    <section class="families wrap" aria-label="Family invitation">
+      <div class="container">
+        <div class="manuhar reveal">
+          <h2 class="deva-title" lang="hi">बाल मनुहार</h2>
+          <blockquote class="quote">
+            <p>“Dhol Bajao Jashan Manao,<br>Mere Mamu Ki Shadi Me Jarur-Jarur Aao”</p>
+            <footer>– Bhavay Gupta</footer>
+          </blockquote>
+        </div>
+
+        <div class="panels reveal">
+          <div class="panel">
+            <h3>A Cordial Invitation From</h3>
+            <p>Mrs. Anita &amp; Mr. Mukesh Kumar Gupta</p>
+            <p class="sub">Mob: <a class="tel" href="tel:+919650409420">9650409420</a>, <a class="tel" href="tel:+919079230034">9079230034</a></p>
+            <div class="actions">
+              <a class="btn btn-gold" id="wa" href="#" target="_blank" rel="noopener">Reply on WhatsApp</a>
+            </div>
+            <h3>Special Invitation By</h3>
+            <p>Mr. Adesh Gupta &amp; Mrs. Swati Gupta</p>
+          </div>
+          <div class="panel">
+            <h3>R.S.V.P</h3>
+            <p>Shri Ashok Gupta &amp; Tarun Gupta</p>
+            <p>Mrs. Saroj Gupta &amp; Ankit Gupta</p>
+            <h3>Maternal Side</h3>
+            <p>Smt. Ram Dulari W/O Late Shri Chhajuram Gupta</p>
+            <p>Shri Anil Gupta, Ankit Gupta &amp; Gaurav Gupta</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer wrap reveal">
+      <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-heart"/></svg>
+      <p>Awaiting your presence</p>
+    </footer>
+  </div>
+</main>
+
+<script>
+(() => {
+  'use strict';
+
+  /* ===== Edit the invitation details here ===== */
+  const INVITE = {
+    couple: "Nishkarsh & Bhanvi",
+    countdownTo: '2026-11-25T10:15:00+05:30',   // first ceremony on the wedding day (IST)
+    timezone: 'Asia/Kolkata',
+    // Background music: keep the mp3 in the same folder as this page and match the file name here.
+    // Browsers only allow sound after a tap, so it starts when a guest taps "Tap to enter".
+    // volume runs from 0 to 1. Set src to '' to turn the music off.
+    music: { src: 'music.mp3', volume: 0.6 },
+    whatsapp: {
+      number: '919650409420',                    // country code + number, digits only
+      message: "Namaste! I would like to confirm my presence at Nishkarsh & Bhanvi's wedding."
+    },
+    // `start` and `end` only feed the "Add to calendar" button. Times are IST.
+    events: [
+      {
+        id: 'golden', icon: 'sun', title: 'Golden Moments', date: 'Tuesday, 24th November 2026',
+        items: [['Haldi', '11:00 AM'], ['Mehndi', '1:00 PM'], ['Lunch', '1:30 PM'], ['Bhaat', '4:00 PM']],
+        venue: { name: 'HOTEL ROYAL RAWAL', address: 'Sharthi Marg, Near SBI Chauraha, Vaishali Nagar, Jaipur-302021', map: 'Hotel Royal Rawal, Vaishali Nagar, Jaipur' },
+        start: '2026-11-24T11:00', end: '2026-11-24T18:00'
+      },
+      {
+        id: 'wedding', icon: 'flame', title: 'Wedding Ceremony', date: 'Wednesday, 25th November 2026',
+        items: [['Lagan', '10:15 AM'], ['Lunch', '1:00 PM']],
+        venue: { name: 'HOTEL ROYAL RAWAL', address: 'Sharthi Marg, Near SBI Chauraha, Vaishali Nagar, Jaipur-302021', map: 'Hotel Royal Rawal, Vaishali Nagar, Jaipur' },
+        start: '2026-11-25T10:15', end: '2026-11-25T14:30'
+      },
+      {
+        id: 'baraat', icon: 'dhol', title: 'Baraat', date: 'Wednesday, 25th November 2026',
+        items: [['Ghurchadi', '4:15 PM'], ['Departure of Baraat', '6:00 PM']],
+        intro: 'Baraat will depart from our residence & will proceed to:',
+        venue: { name: 'SHREE BALA JI PARADISE', address: 'Kesar International Chauraha, Mansarovar, Jaipur-302020', map: 'Shree Bala Ji Paradise, Kesar International Chauraha, Mansarovar, Jaipur', feature: true },
+        start: '2026-11-25T16:15', end: '2026-11-25T21:00'
+      },
+      {
+        id: 'chowki', icon: 'om', title: 'Mata Ki Chowki', date: 'Thursday, 26th November 2026',
+        blessing: ['सर्वमंगल मांगल्ये शिवे सर्वार्थ साधिके ।', 'शरण्ये त्र्यम्बके गौरी नारायणी नमोऽस्तु ते ॥'],
+        time: '9:00 PM',
+        venue: { name: 'Residence', address: '402, Opposite HDFC Bank, Vardhaman Nagar-A, Ajmer Road, Jaipur-302019', map: '402, Vardhaman Nagar-A, Ajmer Road, Jaipur 302019' },
+        note: '*Please accept invitation of ladies from this card*',
+        start: '2026-11-26T21:00', end: '2026-11-26T23:30'
+      }
+    ]
+  };
+  /* ===== End of details ===== */
+
+  const $ = (sel, root = document) => root.querySelector(sel);
+  const root = document.documentElement;
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  const icon = (name, cls = 'ico ico-foil') => `<svg class="${cls}" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-${name}"/></svg>`;
+
+  /* ---------- Event cards ---------- */
+  const mapsUrl = (q) => 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(q);
+  const calUrl = (e) => {
+    const stamp = (s) => s.replace(/[-:]/g, '') + '00';
+    const details = (e.items ? e.items.map(([n, t]) => `${t}  ${n}`).join('\n') : e.time) + `\n\nWedding of ${INVITE.couple}`;
+    const q = new URLSearchParams({
+      action: 'TEMPLATE',
+      text: `${e.title} · ${INVITE.couple}`,
+      dates: `${stamp(e.start)}/${stamp(e.end)}`,
+      ctz: INVITE.timezone,
+      location: `${e.venue.name}, ${e.venue.address}`,
+      details
+    });
+    return 'https://calendar.google.com/calendar/render?' + q.toString();
+  };
+
+  const badge = (e) => e.icon === 'om'
+    ? '<span class="om-glyph foil" lang="sa">ॐ</span>'
+    : icon(e.icon);
+
+  const card = (e) => {
+    const body = e.items
+      ? `<ul class="schedule${e.items.length > 2 ? ' two' : ''}">${e.items.map(([n, t]) => `<li><span>${esc(n)}</span><span class="t">${esc(t)}</span></li>`).join('')}</ul>`
+      : `<p class="bigtime">${esc(e.time)}</p>`;
+    return `
+      <article class="card reveal" aria-labelledby="ev-${e.id}">
+        <div class="badge" aria-hidden="true">${badge(e)}</div>
+        ${e.blessing ? `<p class="blessing" lang="sa">${e.blessing.map(esc).join('<br>')}</p>` : ''}
+        <h3 class="card-title" id="ev-${e.id}">${esc(e.title)}</h3>
+        <p class="card-date">${esc(e.date)}</p>
+        ${body}
+        ${e.intro ? `<p class="intro">${esc(e.intro)}</p>` : ''}
+        <div class="venue${e.venue.feature ? ' feature' : ''}">
+          <p class="venue-label">Venue</p>
+          <p class="venue-name">${esc(e.venue.name)}</p>
+          <p class="venue-addr">${esc(e.venue.address)}</p>
+        </div>
+        <div class="actions">
+          <a class="btn btn-gold" href="${mapsUrl(e.venue.map)}" target="_blank" rel="noopener">${icon('pin', 'ico')} Get Directions</a>
+          <a class="btn btn-line" href="${calUrl(e)}" target="_blank" rel="noopener">${icon('cal', 'ico')} Add to Calendar</a>
+        </div>
+        ${e.note ? `<p class="note">${esc(e.note)}</p>` : ''}
+      </article>`;
+  };
+  $('#cards').insertAdjacentHTML('beforeend', INVITE.events.map(card).join(''));
+
+  const wa = $('#wa');
+  wa.href = `https://wa.me/${INVITE.whatsapp.number}?text=${encodeURIComponent(INVITE.whatsapp.message)}`;
+
+  /* ---------- Countdown ---------- */
+  const target = new Date(INVITE.countdownTo).getTime();
+  const cd = { d: $('#cd-d'), h: $('#cd-h'), m: $('#cd-m'), s: $('#cd-s') };
+  const pad = (n) => String(n).padStart(2, '0');
+  let timer = 0;
+  const tick = () => {
+    const left = Math.floor((target - Date.now()) / 1000);
+    if (left <= 0) {
+      clearInterval(timer);
+      $('#cd-grid').innerHTML = '<p class="cd-done">The celebrations have begun</p>';
+      return;
+    }
+    cd.d.textContent = pad(Math.floor(left / 86400));
+    cd.h.textContent = pad(Math.floor((left % 86400) / 3600));
+    cd.m.textContent = pad(Math.floor((left % 3600) / 60));
+    cd.s.textContent = pad(left % 60);
+  };
+  if (!Number.isNaN(target)) { tick(); timer = setInterval(tick, 1000); }
+
+  /* ---------- Scroll reveal (starts when the doors open) ---------- */
+  const startReveal = () => {
+    const els = document.querySelectorAll('.reveal');
+    if (!('IntersectionObserver' in window)) { els.forEach((el) => el.classList.add('in')); return; }
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((en) => {
+        if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -4% 0px' });
+    els.forEach((el) => io.observe(el));
+  };
+
+  /* ---------- Gold dust and rose petals ---------- */
+  let fxStarted = false;
+  const startFx = () => {
+    if (fxStarted || reduceMotion.matches) return;
+    const cv = $('#fx');
+    const ctx = cv.getContext('2d');
+    if (!ctx) return;
+    fxStarted = true;
+
+    let w = 0, h = 0, dpr = 1;
+    const size = () => {
+      dpr = Math.min(window.devicePixelRatio || 1, 2);
+      w = window.innerWidth; h = window.innerHeight;
+      cv.width = Math.round(w * dpr); cv.height = Math.round(h * dpr);
+    };
+    size();
+    let resizeQueued = false;
+    window.addEventListener('resize', () => {
+      // Phone toolbars change innerHeight while scrolling; only rebuild on a real size change.
+      if (resizeQueued || (window.innerWidth === w && Math.abs(window.innerHeight - h) < 150)) return;
+      resizeQueued = true;
+      requestAnimationFrame(() => { resizeQueued = false; size(); });
+    });
+
+    const lite = window.innerWidth < 768 || (navigator.hardwareConcurrency || 4) <= 4;
+    const rnd = (a, b) => a + Math.random() * (b - a);
+    const COLORS = ['#8b0000', '#a52a2a', '#b22222', '#dc143c', '#5c0918'];
+    const PETAL = new Path2D();
+    PETAL.moveTo(0, 0);
+    PETAL.bezierCurveTo(1, -1, 2, 0, 1, 1);
+    PETAL.bezierCurveTo(0, 2, -1, 1, 0, 0);
+
+    const petal = () => ({
+      x: rnd(0, w), y: rnd(-h, h * 0.3), s: rnd(4.5, 9), vy: rnd(0.5, 1.4), drift: rnd(-0.4, 0.4),
+      ph: rnd(0, 6.28), phv: rnd(0.01, 0.03), a: rnd(0, 6.28), spin: rnd(-0.02, 0.02),
+      c: COLORS[Math.floor(Math.random() * COLORS.length)], o: rnd(0.45, 0.95)
+    });
+    const spark = () => ({ x: rnd(0, w), y: rnd(0, h), r: rnd(0.6, 1.9), vy: -rnd(0.08, 0.3), t: rnd(0, 6.28), tv: rnd(0.02, 0.06), o: rnd(0.3, 0.9) });
+    const petals = Array.from({ length: lite ? 16 : 34 }, petal);
+    const sparks = Array.from({ length: lite ? 24 : 48 }, spark);
+
+    let raf = 0, last = performance.now();
+    const frame = (now) => {
+      const dt = Math.min((now - last) / 16.667, 3);
+      last = now;
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      ctx.clearRect(0, 0, w, h);
+
+      ctx.fillStyle = '#d4af37';
+      for (const p of sparks) {
+        p.y += p.vy * dt; p.t += p.tv * dt;
+        if (p.y < -10) { p.y = h + 10; p.x = rnd(0, w); }
+        const o = p.o * (0.5 + 0.5 * Math.sin(p.t));
+        ctx.globalAlpha = o * 0.22; ctx.beginPath(); ctx.arc(p.x, p.y, p.r * 3.2, 0, 6.2832); ctx.fill();
+        ctx.globalAlpha = o; ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, 6.2832); ctx.fill();
+      }
+
+      for (const p of petals) {
+        p.y += p.vy * dt; p.ph += p.phv * dt; p.a += p.spin * dt;
+        p.x += (p.drift + Math.sin(p.ph) * 0.6) * dt;
+        if (p.y > h + 30) { p.y = -20; p.x = rnd(0, w); }
+        if (p.x < -30) p.x = w + 30; else if (p.x > w + 30) p.x = -30;
+        const cos = Math.cos(p.a) * p.s, sin = Math.sin(p.a) * p.s;
+        ctx.setTransform(dpr * cos, dpr * sin, -dpr * sin, dpr * cos, dpr * p.x, dpr * p.y);
+        ctx.globalAlpha = p.o; ctx.fillStyle = p.c; ctx.fill(PETAL);
+      }
+      raf = requestAnimationFrame(frame);
+    };
+    raf = requestAnimationFrame(frame);
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) cancelAnimationFrame(raf);
+      else { last = performance.now(); raf = requestAnimationFrame(frame); }
+    });
+  };
+
+  /* ---------- Background music ---------- */
+  const bgm = $('#bgm');
+  const musicBtn = $('#music');
+  const MUSIC = INVITE.music || {};
+  const musicOn = Boolean(MUSIC.src);
+  const musicVol = Math.min(1, Math.max(0, MUSIC.volume ?? 0.6));
+  let wantMusic = false;   // what the guest asked for; switching tabs does not change it
+  let fadeTimer = 0;
+
+  if (musicOn) {
+    bgm.src = MUSIC.src;
+    bgm.loop = true;
+    bgm.preload = 'auto';
+    // No file or an unplayable one: the button stays visible in its "off" state; a tap retries.
+    bgm.addEventListener('error', () => {
+      clearInterval(fadeTimer);
+      wantMusic = false;
+      showMusicState();
+      console.warn('Music file could not be loaded: ' + MUSIC.src + '. Check that it is uploaded next to index.html with exactly this name.');
+    });
+  }
+
+  const showMusicState = () => {
+    const label = wantMusic ? 'Pause music' : 'Play music';
+    musicBtn.classList.toggle('off', !wantMusic);
+    musicBtn.setAttribute('aria-label', label);
+    musicBtn.title = label;
+  };
+  const fadeMusic = (to, ms, done) => {
+    clearInterval(fadeTimer);
+    const from = bgm.volume;
+    const steps = Math.max(1, Math.round(ms / 50));
+    let i = 0;
+    fadeTimer = setInterval(() => {
+      i += 1;
+      bgm.volume = Math.min(1, Math.max(0, from + (to - from) * (i / steps)));
+      if (i >= steps) { clearInterval(fadeTimer); if (done) done(); }
+    }, 50);
+  };
+  const playMusic = () => {
+    bgm.volume = 0;
+    const attempt = bgm.play();
+    const rise = () => fadeMusic(musicVol, 1800);
+    if (attempt && attempt.then) {
+      // If the browser still refuses, show the button as "off" so a tap on it can start the music.
+      attempt.then(rise).catch(() => { wantMusic = false; showMusicState(); });
+    } else {
+      rise();
+    }
+  };
+  const pauseMusic = () => fadeMusic(0, 350, () => bgm.pause());
+  const startMusic = () => {
+    if (!musicOn) return;
+    if (bgm.error) bgm.load();   // the first load failed; try once more
+    wantMusic = true;
+    showMusicState();
+    playMusic();
+  };
+  musicBtn.hidden = !musicOn;    // always shown when music is configured
+  showMusicState();
+  musicBtn.addEventListener('click', () => {
+    wantMusic = !wantMusic;
+    if (wantMusic && bgm.error) bgm.load();
+    showMusicState();
+    if (wantMusic) playMusic(); else pauseMusic();
+  });
+  // Pause while the page is out of sight (another tab, directions in a new tab); resume only if the guest had it on.
+  document.addEventListener('visibilitychange', () => {
+    if (!musicOn || !wantMusic) return;
+    if (document.hidden) { clearInterval(fadeTimer); bgm.pause(); } else playMusic();
+  });
+
+  /* ---------- Entrance ---------- */
+  const entrance = $('#entrance');
+  const main = $('#main');
+  let opened = false;
+  main.setAttribute('inert', '');
+
+  const openInvite = () => {
+    if (opened) return;
+    opened = true;
+    startMusic();   // called straight from the tap, which is what lets the browser play sound
+    entrance.classList.add('opened');
+    root.classList.remove('locked');
+    main.removeAttribute('inert');
+    startReveal();
+    startFx();
+    setTimeout(() => {
+      entrance.hidden = true;
+      main.focus({ preventScroll: true });
+    }, reduceMotion.matches ? 450 : 900);
+  };
+  $('#seal').addEventListener('click', openInvite);
+  entrance.addEventListener('click', openInvite);
+
+  $('#cue').addEventListener('click', (ev) => {
+    ev.preventDefault();
+    $('#events').scrollIntoView({ behavior: reduceMotion.matches ? 'auto' : 'smooth' });
+  });
+})();
+</script>
+</body>
+</html>
